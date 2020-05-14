@@ -1,30 +1,41 @@
 'use strict'
 
-const message = 'The quick brown fox jumped over the lazy dog';
-const words = message.split(' ');
-let longbestWord = words[0];
+const findLongestWord = function(string) {
 
-for (let i = 0; i < words.length; i += 1) {
-  console.log(i);
-  console.log(words[i]);
-
-  if ((words[i].length) > longbestWord.length) {
-    longbestWord = (words[i]);
+  const message = string;
+  const words = message.split(' ');
+  let longbestWord = words[0];
+  
+// // 1-й вариант
+  for (let i = 0; i < words.length; i += 1) {
+    // console.log(i);
+    // console.log(words[i]);
+  
+    if ((words[i].length) > longbestWord.length) {
+      longbestWord = (words[i]);
+    }
   }
+  // console.log(words);
+  console.log(longbestWord);
 
-}
-console.log(words);
-console.log(longbestWord);
+// // 2-й вариант (for...of)
+//   for (const word of words) {
+//     if (word.length > longbestWord.length) {
+//       longbestWord = word;
+//     }
+//   }
+//   console.log(longbestWord);
+
+};
+
+console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
+console.log(findLongestWord('Google do a roll')); // 'Google'
+console.log(findLongestWord('May the force be with you')); // 'force'
 
 
-
-// const findLongestWord = function(string) {
-//   // твой код
-// };
-
-
-
-
+//
+//
+//// !погуглить инвариантные вычесления
 
 // Задание 3
 // Напиши фукцнию findLongestWord(string), которая принимает параметром произвольную строку (в строке будут только слова и пробелы) и возвращает самое длинное слово в этой строке.
