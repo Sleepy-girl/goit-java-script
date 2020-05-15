@@ -10,7 +10,6 @@ const findLongestWord = function(string) {
   for (let i = 0; i < words.length; i += 1) {
     // console.log(i);
     // console.log(words[i]);
-  
     if ((words[i].length) > longbestWord.length) {
       longbestWord = (words[i]);
     }
@@ -24,7 +23,6 @@ const findLongestWord = function(string) {
 //     }
 //   }
 //   return longbestWord;
-
 };
 
 console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
