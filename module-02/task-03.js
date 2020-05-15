@@ -15,8 +15,7 @@ const findLongestWord = function(string) {
       longbestWord = (words[i]);
     }
   }
-  // console.log(words);
-  console.log(longbestWord);
+  return longbestWord;
 
 // // 2-й вариант (for...of)
 //   for (const word of words) {
@@ -24,7 +23,7 @@ const findLongestWord = function(string) {
 //       longbestWord = word;
 //     }
 //   }
-//   console.log(longbestWord);
+//   return longbestWord;
 
 };
 

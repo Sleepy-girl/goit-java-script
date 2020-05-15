@@ -1,26 +1,22 @@
 'use strict'
 
+let input;
+const numbers = [];
+let total = 0;
 
+while (input = Number(prompt('Введите число'))) {
+  if (input === null){
+    break;
+  }
+numbers.push(input);
+}
 
+for (let i=0;i<numbers.length;i++) {
+  total += numbers[i];
+}
 
+console.log (`Общая сумма чисел равна ${total}`);
 
-
-// let input;
-
-// const numbers = [];
-// let total = 0;
-
-// const input = prompt ('Введите число');
-// numbers = Number(numbers.push(input));
-// numbers.push(input);
-// console.log(numbers);
-
-
-
-
-
-//
-//
 //
 //
 // Задание 6

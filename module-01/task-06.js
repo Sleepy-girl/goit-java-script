@@ -3,8 +3,6 @@
 let counter;
 let total = 0;
 
-// debugger
-
 while (counter = prompt ('Введите число')) {
 
   if (isNaN(counter)) {

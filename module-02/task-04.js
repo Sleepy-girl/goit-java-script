@@ -3,10 +3,10 @@
 const formatString = function(string) {
 
   if (string.length <= 40) {
-    console.log (string);
+    return string;
   } else if (string.length > 40) {
     const stringCrop = string.slice(0, 40);
-  console.log (`${stringCrop}...`);
+  return (`${stringCrop}...`);
   }
 
 };

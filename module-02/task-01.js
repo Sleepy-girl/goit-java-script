@@ -1,12 +1,13 @@
 'use strict'
 
 const logItems = function(array) {
-
+// let x = ' ';
   const items = array;
   for (let i = 0; i < items.length; i += 1) {
-    console.log(`[${i+1}] -`, items[i]);
-  };
-  
+     console.log (`[${i+1}] -`, items[i]);
+    //  x = items[i];
+  }
+  // console.log ('test', x);
 };
 
 logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
