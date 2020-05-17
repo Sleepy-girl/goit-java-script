@@ -1,5 +1,7 @@
 'use strict'
 
+const login = [];
+
 const addLogin = function(allLogins, login) {
   allLogins = allLogins.includes (login);
 
@@ -12,19 +14,26 @@ const addLogin = function(allLogins, login) {
     }
 
   };
-  // console.log (isLoginValid(login));
+  // console.log (isLoginValid('Ajax'));
+  // console.log (isLoginValid('robotGoogles'));
+  // console.log (isLoginValid('Zod'));
+  // console.log (isLoginValid('jqueryisextremelyfast'));
 
   const isLoginUnique = function (allLogins, login) {
-
-    if (allLogins.includes (login) = false) {
-      return ('Такой логин уже используется!');
-    } else {
+    if (allLogins.includes(login)) {
       return true;
+    } else {
+      return ('Такой логин уже используется!');
     }
 
   };
 
-  if (isLoginUnique = true) {
+  // console.log (isLoginUnique(['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'], 'Ajax'));
+  // console.log (isLoginUnique(['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'], 'robotGoogles'));
+  // console.log (isLoginUnique(['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'], 'Zod'));
+  // console.log (isLoginUnique(['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'], 'jqueryisextremelyfast'));
+
+  if (isLoginUnique) {
     const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
     logins.push(login);
   }
