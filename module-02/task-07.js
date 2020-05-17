@@ -1,5 +1,40 @@
 'use strict'
 
+const isLoginValid = function(login) {
+
+  if (login.length >= 4 && login.length <= 16) {
+    return login;
+  } else {
+    return ('Ошибка! Логин должен быть от 4 до 16 символов');
+  }
+
+};
+// console.log (isLoginValid(login));
+
+const isLoginUnique = function (allLogins, login) {
+
+  if (allLogins.includes (login) = false) {
+    return ('Такой логин уже используется!');
+  } else {
+    return true;
+  }
+
+};
+
+const addLogin = function(allLogins, login) {
+
+  if (isLoginUnique = true) {
+    const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
+    logins.push(login);
+  }
+  return ('Логин успешно добавлен!');
+
+};
+
+console.log(addLogin(login, 'Ajax')); // 'Логин успешно добавлен!'
+console.log(addLogin(login, 'robotGoogles')); // 'Такой логин уже используется!'
+console.log(addLogin(login, 'Zod')); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+console.log(addLogin(login, 'jqueryisextremelyfast')); // 'Ошибка! Логин должен быть от 4 до 16 символов'
 
 
 
