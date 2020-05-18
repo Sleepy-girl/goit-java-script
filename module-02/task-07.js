@@ -1,38 +1,29 @@
 'use strict'
 
+// debugger;
+const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
+
 const addLogin = function(allLogins, login) {
-  allLogins = allLogins.includes (login);
 
   const isLoginValid = function(login) {
-
     if (login.length >= 4 && login.length <= 16) {
       return login;
-    } else {
+    } 
       return ('Ошибка! Логин должен быть от 4 до 16 символов');
-    }
-
   };
-  // console.log (isLoginValid('Ajax'));
-  // console.log (isLoginValid('robotGoogles'));
-  // console.log (isLoginValid('Zod'));
-  // console.log (isLoginValid('jqueryisextremelyfast'));
 
   const isLoginUnique = function (allLogins, login) {
-    if (allLogins.includes(login)) {
-      return true;
-    } else {
-      return ('Такой логин уже используется!');
-    }
+    if (isLoginValid) {
+    allLogins = allLogins.includes(login);
 
+      if (allLogins) {
+        return ('Такой логин уже используется!');
+      } 
+        return true;
+    }
   };
 
-  // console.log (isLoginUnique(['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'], 'Ajax'));
-  // console.log (isLoginUnique(['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'], 'robotGoogles'));
-  // console.log (isLoginUnique(['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'], 'Zod'));
-  // console.log (isLoginUnique(['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'], 'jqueryisextremelyfast'));
-
   if (isLoginUnique) {
-    const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
     logins.push(login);
   }
   return ('Логин успешно добавлен!');

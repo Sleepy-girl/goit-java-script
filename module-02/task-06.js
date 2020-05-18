@@ -11,7 +11,7 @@ while (input = Number(prompt('Введите число'))) {
 numbers.push(input);
 }
 
-for (let i=0;i<numbers.length;i++) {
+for (let i = 0; i < numbers.length; i++) {
   total += numbers[i];
 }
 
