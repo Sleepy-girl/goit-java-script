@@ -8,9 +8,12 @@ const products = [
 ];
 
 const getAllPropValues = function(arr, prop) {
-  // твой код
- 
-
+  prop = [];
+  for (const product of products) {
+    // console.log(product);
+    prop.push (product.name);
+  }
+  return prop;
 };
 
 console.log(getAllPropValues(products, 'name')); // ['Радар', 'Сканер', 'Дроид', 'Захват']
