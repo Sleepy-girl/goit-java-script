@@ -8,13 +8,18 @@ const products = [
 ];
 
 const calculateTotalPrice = function(allProdcuts, productName) {
-  // твой код
-
-
-};
+  
+  for (const product of allProdcuts) {
+    const valuesProduct = Object.values(product);
+    // console.log(valuesProduct);
+    if (valuesProduct.includes(productName)) {
+      let totalPrice = valuesProduct[1] * valuesProduct[2];
+      return totalPrice;
+    }
+  }
+}
 
 console.log(calculateTotalPrice(products, 'Радар')); // 5200
-
 console.log(calculateTotalPrice(products, 'Дроид')); // 2800
 
 // Задание 6
