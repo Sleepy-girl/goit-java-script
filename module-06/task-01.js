@@ -22,8 +22,9 @@ console.log(getUserNames(users));
 // по цвету глаз (поле eyeColor).
 
 const getUsersWithEyeColor = (users, color) => {
-  const eyesColor = users.filter(user => user.eyeColor === color);
-    return eyesColor;
+  // const eyesColor = users.filter(user => user.eyeColor === color);
+  //   return eyesColor;
+  return users.filter(user => user.eyeColor === color);
 };
 
 console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
@@ -32,8 +33,10 @@ console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley
 // Получить массив имен пользователей по полу (поле gender).
 
 const getUsersWithGender = (users, gender) => {
-  const genderFilter = users.filter(user => user.gender === gender);
-  return genderFilter.map(genderFilter => genderFilter.name);
+  // const genderFilter = users.filter(user => user.gender === gender);
+  // return genderFilter.map(genderFilter => genderFilter.name);
+  return users.filter(user => user.gender === gender)
+  .map(genderFilter => genderFilter.name);
 };
 
 console.log(getUsersWithGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
@@ -73,37 +76,33 @@ console.log(getUsersWithAge(users, 30, 40));
 // Получить общую сумму баланса (поле balance) всех пользователей.
 
 const calculateTotalBalance = users => {
-  const usersBalance = users.map(user => user.balance);
-  return usersBalance.reduce((acc, value) => acc + value, 0);
+  // const usersBalance = users.map(user => user.balance);
+  // return usersBalance.reduce((acc, value) => acc + value, 0);
+  return users.map(user => user.balance)
+  .reduce((acc, value) => acc + value, 0);
 };
 
 console.log(calculateTotalBalance(users)); // 20916
 
-//! Задание 8
+//* Задание 8
 // Массив имен всех пользователей, у которых есть друг с указанным именем.
-const getUsersWithFriend = (users, friendName) => {
-  // const userHasFriend = users.reduce((acc, friendName) => acc + friendName, []);
-  // return userHasFriend
-  return users.find(user => user.friends === friendName);
 
+const getUsersWithFriend = (users, friendName) => {
+   return users.filter(user => user.friends.includes(friendName))
+   .map(user => user.name);
 };
 
 console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
 console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
 
-//! Задание 9
+//* Задание 9
 // Массив имен (поле name) людей, отсортированных в зависимости от количества их друзей (поле friends)
 
 const getNamesSortedByFriendsCount = users => {
-  // const quantity = [...users]
-  // return (min, max) => min.friends.lendth - max.friends.lendth;
-  // return quantity.sort((min, max) => min.friends.lendth - max.friends.lendth);
-
-  // const quantityFriends = users.sort((min, max) => min.friends.lendth - max.friends.lendth);
+  // const quantityFriends = users.sort((min, max) => min.friends.length - max.friends.length);
   // return quantityFriends.map(quantityFriends => quantityFriends.name);
-  // return console.log(users.map(user => user.friends));
-  // const usersSort = users.sort(user.friends.lendth);
-  // return usersSort;
+  return users.sort((min, max) => min.friends.length - max.friends.length)
+    .map(quantityFriends => quantityFriends.name);
 };
 
 console.log(getNamesSortedByFriendsCount(users));
@@ -121,3 +120,4 @@ const getSortedUniqueSkills = users => {
 
 console.log(getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
+
