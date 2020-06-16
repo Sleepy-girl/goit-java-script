@@ -102,16 +102,17 @@
 
 //* =============== hw-01-06 ================
 
-// let input;
-// let total = 0;
+let input;
+let total = 0;
 
-// do {
-//   input = prompt('Введите число');
-//   total += Number(input);
-//   if (isNaN(input)) {
-//     alert ('Было введено не число, попробуйте еще раз');
-//     continue;
-//   }
-// } while (input !== null);
+do {
+  input = prompt('Введите число');
+  if (isNaN(input)) {
+    alert ('Было введено не число, попробуйте еще раз');
+    continue;
+  } else {
+   total += Number(input);
+  }
+} while (input !== null);
 
-// alert (`Общая сумма чисел равна ${total}`);
+alert (`Общая сумма чисел равна ${total}`);
