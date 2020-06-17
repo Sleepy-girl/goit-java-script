@@ -1,12 +1,10 @@
 //* ======== hw-02-01 ==========
 
 // const logItems = function(array) {
-
 //   for (let i = 0; i < array.length; i += 1) {
 //     console.log (`${i+1} -`, array[i]);
 //   }
 // };
-
 // logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
 // logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
 
@@ -42,12 +40,21 @@
 //   calculateEngravingPrice('Donec orci lectus aliquam est magnis', 20),
 // ); // 120
 
-//! ======== hw-02-03 ==========
+
+//* ======== hw-02-03 ========== "САМОЕ ДЛИННОЕ СЛОВО" ====
 
 // const findLongestWord = function(string) {
 
+//   const words = string.split(' ');
+//   // console.log(words);
+//   let longestWord = words[0];
 
-
+//   for (let word of words) {
+//     if (longestWord.length < word.length) {
+//       longestWord = word;
+//     }
+//   }
+//   return longestWord;
 // };
 
 // console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
@@ -75,66 +82,97 @@
 // // вернется форматированная строка
 
 
-//! ======== hw-02-05 ==========
+//* ======== hw-02-05 ==========
+
+// const checkForSpam = function(message) {
+//   const words = message.split(' ')
+// //  console.log(words);
+//   for (let word of words) {
+//     const wordLowerCase = word.toLowerCase()
+//     // console.log(wordLowerCase);
+//     if (wordLowerCase.includes('spam') || wordLowerCase.includes('sale')) {
+//       return true;
+//     }
+//   }
+//   return false;
+// };
+
+// console.log(checkForSpam('Latest technology news')); // false
+// console.log(checkForSpam('JavaScript weekly newsletter')); // false
+// console.log(checkForSpam('Get best sale offers now!')); // true
+// console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
 
 
+//* ======== hw-02-06 ==========
 
-
-//! ======== hw-02-06 ==========
-
-
-
-//! ======== hw-02-07 ==========
-
-
-
-//* ================================
-
-// const clients = ['Mango', 'Ajax', 'Poly'];
-
-// for (let i = 0; i < clients.length; i += 1) {
-//   console.log('Logging clients: ', clients[i]);
-// }
-
+// let input;
 // const numbers = [];
+// let total = 0;
 
-// for (let i = 0; i < 3; i += 1) {
-//   numbers.push(`label-${i}`);
-// }
-
-// console.log('numbers: ', numbers); // ['label-0', 'label-1', 'label-2']
-
-// // Итерация по массиву
-// const clients = ['Mango', 'Ajax', 'Poly'];
-
-// for (const client of clients) {
-//   console.log(client);
-// }
-
-// // Итерация по строке
-// const string = 'javascript';
-
-// for (const character of string) {
-//   console.log(character);
-// }
-
-// 
-// const clients = ['Mango', 'Poly', 'Ajax'];
-// const clientNameToFind = 'Poly';
-// let message = 'Клиента с таким именем нету в базе данных!';
-
-// for (const client of clients) {
-//   if (client === clientNameToFind) {
-//     message = 'Клиент с таким именем есть в базе данных!';
+// while (input = Number(prompt('Введите число'))) {
+//   if (input === null) {
 //     break;
 //   }
+//   numbers.push(input);
+// };
 
-//   // Если не совпадает, то на этой итерации ничего не делаем
-// }
+// for (let number of numbers) {
+//   if (numbers !== []) {
+//     total += number;
+//     console.log (`Общая сумма чисел равна ${total}`);
+//   }
+// };
 
-// console.log(message); // Клиент с таким именем есть в базе данных!
-// const clients = ['Mango', 'Ajax', 'Poly'];
 
-// for (let i = 0; i < clients.length; i += 1) {
-//   console.log('Logging clients: ', clients[i]);
-// }
+//* ======== hw-02-07 ==========
+
+// const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
+
+// const isLoginValid = function(login) {
+  
+//   if (login.length >= 4 && login.length <= 16) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+
+// };
+
+// const isLoginUnique = function(allLogins, login) {
+  
+//   //* ===== 1 вариант (for...of) ====
+//   // for (let oneOfAllLogins of allLogins) {
+//   //   if (oneOfAllLogins === login) {
+//   //     return false;
+//   //   } else {
+//   //     return true;
+//   //   }
+//   // }
+
+//   //* ===== 2 вариант (.includes()) ====
+//   if (allLogins.includes(login)) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+
+// };
+
+// const addLogin = function(allLogins, login) {
+  
+//   if (!isLoginValid(login)) {
+//     return ('Ошибка! Логин должен быть от 4 до 16 символов');
+//   } else if (!isLoginUnique(allLogins, login)) {
+//     return ('Такой логин уже используется!');
+//   } else {
+//     allLogins.concat(login);
+//     return ('Логин успешно добавлен!');
+//   }
+
+// };
+
+// console.log(addLogin(logins, 'Ajax')); // 'Логин успешно добавлен!'
+// console.log(addLogin(logins, 'robotGoogles')); // 'Такой логин уже используется!'
+// console.log(addLogin(logins, 'Zod')); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+// console.log(addLogin(logins, 'jqueryisextremelyfast')); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+
