@@ -1,12 +1,13 @@
 //* ======== hw-02-01 ==========
 
-// const logItems = function(array) {
-//   for (let i = 0; i < array.length; i += 1) {
-//     console.log (`${i+1} -`, array[i]);
-//   }
-// };
-// logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
-// logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
+const logItems = array => {
+  for (let i = 0; i < array.length; i += 1) {
+    console.log (`${i+1} -`, array[i]);
+  }
+  return;
+};
+logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
+logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
 
 
 //* ======== hw-02-02 ==========
@@ -88,9 +89,7 @@
 //   const words = message.split(' ')
 // //  console.log(words);
 //   for (let word of words) {
-//     const wordLowerCase = word.toLowerCase()
-//     // console.log(wordLowerCase);
-//     if (wordLowerCase.includes('spam') || wordLowerCase.includes('sale')) {
+//     if (word.toLowerCase().includes('spam') || word.toLowerCase().includes('sale')) {
 //       return true;
 //     }
 //   }
@@ -128,7 +127,7 @@
 
 // const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
 
-// const isLoginValid = function(login) {
+// const isLoginValid = login => {
   
 //   if (login.length >= 4 && login.length <= 16) {
 //     return true;
@@ -138,7 +137,7 @@
 
 // };
 
-// const isLoginUnique = function(allLogins, login) {
+// const isLoginUnique = (allLogins, login) => {
   
 //   //* ===== 1 вариант (for...of) ====
 //   // for (let oneOfAllLogins of allLogins) {
@@ -158,7 +157,7 @@
 
 // };
 
-// const addLogin = function(allLogins, login) {
+// const addLogin = (allLogins, login) => {
   
 //   if (!isLoginValid(login)) {
 //     return ('Ошибка! Логин должен быть от 4 до 16 символов');
