@@ -36,7 +36,7 @@
 
 // const findBestEmployee = (employees) => {
 
-//   //* ===== вариант-1 по вебинару Репеты =====
+//   //* ===== вариант-1 =====
 
 //   // const allEntries = Object.entries(employees);
 //   // // console.log(allEntries);
@@ -56,7 +56,7 @@
 //   // }
 //   // return bestEmployee;
 
-//   //* ====== вариант-2 (лично мой) =======
+//   //* ====== вариант-2 =======
 
 //   const maxProductivity = Math.max(...Object.values(employees));
 //   // console.log(maxProductivity);
