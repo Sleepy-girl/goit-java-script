@@ -198,6 +198,7 @@ const Transaction = {
  */
 
 const account = {
+  id: 0,
   // Текущий баланс счета
   balance: 0,
 
@@ -209,10 +210,11 @@ const account = {
    * Принимает сумму и тип транзакции.
    */
   createTransaction(amount, type) {
+    this.id += 1;
     const transaction = {
       amount,
       type,
-      id: Math.round(Math.random() * 1000000)
+      id: this.id
     }
     return transaction;
   },
@@ -272,13 +274,13 @@ const account = {
    * определенного типа транзакции из всей истории транзакций
    */
   getTransactionTotal(type) {
-    // if (type === Transaction.DEPOSIT) {
-    //   amountOfFunds += this.deposit(amount);
-    //   return amountOfFunds;
-    // } else if (type === Transaction.WITHDRAW) {
-    //   amountOfFunds += this.withdraw(amount);
-    //   return amountOfFunds;
-    // }
+    let sum = 0;
+    for (const transaction of this.transactions) {
+      if (transaction.type === type) {
+        sum += transaction.amount;
+      }
+    }
+    return sum;
   },
 };
 
@@ -293,7 +295,7 @@ console.log(account.withdraw(600));
 
 console.log(account.getBalance());
 
-console.log(account.getTransactionDetails());
+console.log(account.getTransactionDetails(1));
 
 console.log(account.getTransactionTotal(Transaction.DEPOSIT));
 console.log(account.getTransactionTotal(Transaction.WITHDRAW));
