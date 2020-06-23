@@ -1,61 +1,64 @@
 //* ============= hw-04-01 ================
 
+const account = {
+  owner: 'Mango',
+  balance: 24000,
+  discount: 0.1,
+  orders: ['order-1', 'order-2', 'order-3'],
+  changeDiscount(value) {
+    this.discount = value;
+  },
+  showOrders() {
+    return this.orders;
+  },
+  addOrder(cost, order) {
+    this.balance -= cost;
+    this.orders.push(order);
+  },
+};
 
+account.changeDiscount(0.15);
+console.log(account.discount); // 0.15
+
+console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3']
+
+account.addOrder(5000, 'order-4');
+console.log(account.balance); // 19000
+console.table(account.showOrders()); // ['order-1', 'order-2', 'order-3', 'order-4']
 
 //* ============= hw-04-02 ================
 
+const inventory = {
+  items: ['Knife', 'Gas mask'],
+  add(itemName) {
+    console.log(`Adding ${itemName} to inventory`);
+    this.items.push(itemName);
+  },
+  remove(itemName) {
+    console.log(`Removing ${itemName} from inventory`);
+    this.items = this.items.filter(item => item !== itemName);
+  },
+};
+
+const invokeInventoryAction = function(itemName, action) {
+  console.log(`Invoking action on ${itemName}`);
+  action(itemName);
+};
+
+invokeInventoryAction('Medkit', inventory.add.bind(inventory));
+// Invoking action on Medkit
+// Adding Medkit to inventory
+
+console.log(inventory.items); // ['Knife', 'Gas mask', 'Medkit']
+
+invokeInventoryAction('Gas mask', inventory.remove.bind(inventory));
+// Invoking action on Gas mask
+// Removing Gas mask from inventory
+
+console.log(inventory.items); // ['Knife', 'Medkit']
 
 
-//* ============= hw-04-03 ================
 
 
 
-//* ============= hw-04-04 ================
-
-
-
-//* ============= hw-04-05 ================
-
-
-
-//* ============= hw-04-06 ================
-//  let str = [8, 9, 5,'dfghjhkj'];
-//  let lsatSymbol = str.reverse();
-//  console.log(...lsatSymbol);
-//  for (let symb of str) {
-//    console.log(symb);
-//  }
-//  let test = '12345';
-// alert(Number(test[0]) + Number(test[1])); 
-
-// const number = 12345;
-// const getArrayNumbers = (number) => {
-//   const str = String(number);
-//   const arrayNumber = str.split('');
-//   return arrayNumber;
-// }
-// console.log(getArrayNumbers(number));
-
-// const getSumNumbers = (arrayNumbers) => {
-//   let sumNumbers = 0;
-//   for (let number of arrayNumbers) {
-//    sumNumbers += Number(number);
-//   }
-//   return sumNumbers;
-// }
-// console.log(getSumNumbers(getArrayNumbers(number)));
-
-// const number = 12345;
-// const stringNumber = String(number);
-// const arrayStrNumber = stringNumber.split('');
-// const reverseArrStrNumber = arrayStrNumber.reverse();
-// const newString = reverseArrStrNumber.join('');
-// console.log(Number(newString));
- 
-// const sideSquare = prompt('введите значение стороны квадрата');
-// alert(Number(sideSquare)**2);
-
-// const side1 = prompt('введите значение 1-стороны прямоугольника');
-// const side2 = prompt('введите значение 2-стороны прямоугольника');
-// alert(Number(side1)+Number(side2))
 

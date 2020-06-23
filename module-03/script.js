@@ -6,17 +6,28 @@
 //   premium: true,
 // };
 
+// // user['mood'] = 'happy';
+// // user['hobby'] = 'skydiving';
+// // user['premium'] = false;
 // user.mood = 'happy';
 // user.hobby = 'skydiving';
 // user.premium = false;
 // // console.log(user);
-
+//* ========= 1-вариант =============
 // const keys = Object.keys(user);
 // const values = Object.values(user);
-
 // for (let i = 0; i < keys.length; i += 1) {
 //   console.log(`${keys[i]}: ${values[i]}`);
 // }
+//* ========= 2-вариант =============
+// for (const key of Object.keys(obj)) {
+//   console.log(`${key}: ${user[key]}`);
+// }
+//* ========= 3-вариант =============
+// for (const entry of Object.entries(obj)) {
+//   console.log(`${entry[0]}: ${entry[1]}`);
+// }
+
 
 // //* ========== hw-03-02 =============
 

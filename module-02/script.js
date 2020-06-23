@@ -164,7 +164,7 @@
 //   } else if (!isLoginUnique(allLogins, login)) {
 //     return ('Такой логин уже используется!');
 //   } else {
-//     allLogins.concat(login);
+//     allLogins.concat(login); // можно через .push()
 //     return ('Логин успешно добавлен!');
 //   }
 
