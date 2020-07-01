@@ -3,10 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
   <title>Vygovska</title>
 </head>
 <body>
-  <span>module-07</span>
+  <span class="structure module07">module-07</span>
+
+  <!-- //* ================== hw-07-01 ===================== -->
+  <span class="structure">================== hw-07-01 =====================</span>
+  
+  <ul id="categories">
+    <li class="item">
+      <h2>Животные</h2>
+  
+      <ul>
+        <li>Кот</li>
+        <li>Хомяк</li>
+        <li>Лошадь</li>
+        <li>Попугай</li>
+      </ul>
+    </li>
+    <li class="item">
+      <h2>Продукты</h2>
+  
+      <ul>
+        <li>Хлеб</li>
+        <li>Петрушка</li>
+        <li>Творог</li>
+      </ul>
+    </li>
+    <li class="item">
+      <h2>Технологии</h2>
+  
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Node</li>
+      </ul>
+    </li>
+  </ul>
+
+  <!-- //* ================== hw-07-02 ===================== -->
+  <span class="structure">================== hw-07-02 =====================</span>
+
+
+  <ul id="ingredients"></ul>
+
+  <!-- //* ================== hw-07-03 ===================== -->
+  <span class="structure">================== hw-07-03 =====================</span>
+
+  <ul id="gallery"></ul>
+
+  <!-- //* ================== hw-07-04 ===================== -->
+  <span class="structure">================== hw-07-04 =====================</span>
+
+  <div id="counter">
+    <button type="button" data-action="decrement">-1</button>
+    <span id="value">0</span>
+    <button type="button" data-action="increment">+1</button>
+  </div>
+
+  <!-- //* ================== hw-07-05 ===================== -->
+  <span class="structure">================== hw-07-05 =====================</span>
+
+  <button id="btn" class="btn">CLICK ME!</button>
+
+  <input type="text" placeholder="Ваше имя?" id="name-input" />
+<h1>Привет, <span id="name-output">незнакомец</span>!</h1>
+
+  <!-- //* ================== hw-07-06 ===================== -->
+  <span class="structure">================== hw-07-06 =====================</span>
+
+  <input
+  type="text"
+  id="validation-input"
+  data-length="6"
+  placeholder="Введи 6 символов"
+  />
+
+  <!-- //* ================== hw-07-07 ===================== -->
+  <span class="structure">================== hw-07-07 =====================</span>
+
+  <input id="font-size-control" type="range"/>
+  <br/>
+  <span id="text">Абракадабра!</span>
+
+  <!-- //* ================== hw-07-08 ===================== -->
+  <!-- <span class="structure">================== hw-07-08 =====================</span>
+
+  <div id="controls">
+    <input type="number" min="0" max="100" step="1" />
+    <button type="button" data-action="render">Создать</button>
+    <button type="button" data-action="destroy">Очистить</button>
+  </div>
+  
+  <div id="boxes"></div> -->
+
+<!--* ---------------------------------------------------------- -->
   <script type="module" src="./script.js"></script>
 </body>
 </html>

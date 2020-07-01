@@ -1,0 +1,45 @@
+.structure {
+  display: block;
+  color: #4caf50;
+  margin: 20px 0;
+}
+.module07 {
+  color: black;
+  font-weight: 600;
+  font-family: serif;
+  margin-bottom: 20px;
+}
+/* //* ================== hw-07-03 ===================== */
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.js-gallery-list {
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+}
+.js-gallery-list:not(:nth-child(3n)) {
+  margin-right: 20px;
+}
+/* //* ================== hw-07-06 ===================== */
+
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+} 
+
+/* //* ================== hw-07-00 ===================== */
+
+#boxes {
+  margin-bottom: 60px;
+}
