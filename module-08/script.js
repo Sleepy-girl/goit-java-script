@@ -32,11 +32,14 @@ function openModal(event) {
   if (event.target.nodeName !== "IMG") {
     return;
   };
-
+ 
   // console.log(event.target.nodeName);
   refs.modal.classList.add('is-open');
   refs.img.src = event.target.dataset.source;
+  
   // console.log(refs.image);
+
+
   refs.modal.addEventListener('click', closeModal);
   document.addEventListener('keydown', closeModal);
   
@@ -55,7 +58,13 @@ function closeModal(event) {
 
 refs.gallery.addEventListener('click', openModal);
 
-
+// function moveToRight(event) {
+//   // refs.img.alt = event.target.alt;
+//   altImage = event.target.getAttribute('alt');
+//  if (event.code === 'ArrowRight') {
+//     moveToRight(event);
+//   };
+// }
 
 
 // function backDropClick(event) {
