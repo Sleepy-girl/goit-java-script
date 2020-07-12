@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luxplanjay/webpack-starter-kit.git"
+    "url": "git+https://github.com/Sleepy-girl/goit-javascript/tree/master/module-10.git"
   },
   "keywords": [],
   "author": "Anna Vygovska <pilloeforneedles@gmail.com>",
@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/Sleepy-girl/goit-javascript/tree/master/module-10/issues"
   },
-  "homepage": "https://github.com/Sleepy-girl/goit-javascript/tree/master/module-10",
+  "homepage": "https://sleepy-girl.github.io/goit-javascript/module-10/",
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
