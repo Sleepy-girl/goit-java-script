@@ -1,21 +1,23 @@
 import './styles.css';
 import menu from './menu.json';
 import menuTemplate from './template.hbs';
-import Theme from './themes.js';
+import {Theme} from './themes.js';
 
 const menuRef = document.querySelector('.menu');
+const bodyRef = document.querySelector('body');
+const checkboxRef = document.getElementById('theme-switch-control');
+
 const markup = menuTemplate(menu);
 menuRef.insertAdjacentHTML('afterbegin', markup);
 
-const switchRef = document.querySelector('.js-switch-input');
-const bodyRef = document.querySelector('body');
-
 bodyRef.classList.add('light-theme');
+
+checkboxRef.addEventListener('change', toolbar);
 
 saveTheme();
 
-function toolbar (e) {
-  if (e.target.checked) {
+function toolbar () {
+  if (checkboxRef.checked) {
     bodyRef.classList.add(Theme.DARK);
     bodyRef.classList.remove(Theme.LIGHT);
     localStorage.setItem('Theme', Theme.DARK);
@@ -30,9 +32,7 @@ function saveTheme() {
   const savedTheme = localStorage.getItem('Theme');
   if (savedTheme) {
     bodyRef.classList.add(savedTheme);
-  } else if (savedTheme === 'dark-theme') {
-    switchRef.checked = true;
+  } else if (savedTheme === Theme.DARK) {
+    checkboxRef.checked = true;
   }
 };
-
-switchRef.addEventListener('change', toolbar);

@@ -1,5 +1,5 @@
 {
-  "name": "webpack-starter-kit",
+  "name": "module-10",
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
@@ -14,10 +14,10 @@
     "url": "git+https://github.com/luxplanjay/webpack-starter-kit.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Anna Vygovska <pilloeforneedles@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/luxplanjay/webpack-starter-kit/issues"
+    "url": "https://github.com/Sleepy-girl/goit-javascript/tree/master/module-10/issues"
   },
   "homepage": "https://github.com/Sleepy-girl/goit-javascript/tree/master/module-10",
   "devDependencies": {
