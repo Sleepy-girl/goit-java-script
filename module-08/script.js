@@ -1,29 +1,29 @@
-import images from './gallery-items.js';
+import images from "./gallery-items.js";
 
 const refs = {
-  gallery: document.querySelector('.js-gallery'),
-  modal: document.querySelector('.lightbox'),
-  img: document.querySelector('.lightbox__image'),
-  lightboxOverlay: document.querySelector('.lightbox__overlay'),
-  // btnCloseModal: document.querySelector('button[data-action="close-lightbox"]'),
-  // contentModal: document.querySelector('.lightbox__content')
-}
+  gallery: document.querySelector(".js-gallery"),
+  modal: document.querySelector(".js-lightbox"),
+  img: document.querySelector(".lightbox__image"),
+  lightboxOverlay: document.querySelector(".lightbox__overlay"),
+};
 
 function galleryItems() {
-  images.reduce((markUp, image) => {
-    markUp += `
+  images.reduce((markup, image) => {
+    markup += `
     <li class="gallery__item">
-    <a class="gallery__linkk" 
-    href="${image.original}">
-    <img class="gallery__image" 
-    src="${image.preview}"
-    data-source="${image.original}" 
-    alt="${image.description}"></a></li>
+      <a class="gallery__linkk" 
+      href="${image.original}">
+        <img class="gallery__image" 
+        src="${image.preview}"
+        data-source="${image.original}" 
+        alt="${image.description}">
+      </a>
+    </li>
     `;
-    refs.gallery.innerHTML = markUp;
-    return markUp;
-  },'')
-};
+    refs.gallery.innerHTML = markup;
+    return markup;
+  }, "");
+}
 galleryItems();
 
 function openModal(event) {
@@ -31,32 +31,29 @@ function openModal(event) {
 
   if (event.target.nodeName !== "IMG") {
     return;
-  };
- 
+  }
   // console.log(event.target.nodeName);
-  refs.modal.classList.add('is-open');
+  refs.modal.classList.add("is-open");
   refs.img.src = event.target.dataset.source;
-  
   // console.log(refs.image);
-
-
-  refs.modal.addEventListener('click', closeModal);
-  document.addEventListener('keydown', closeModal);
-  
-};
+  refs.modal.addEventListener("click", closeModal);
+  document.addEventListener("keydown", closeModal);
+}
 
 function closeModal(event) {
-  if (event.target === refs.lightboxOverlay || 
-    event.target.dataset.action === 'close-lightbox' || 
-    event.code === 'Escape') {
-      refs.img.src = '';
-      refs.modal.classList.remove('is-open');
-      refs.modal.removeEventListener('click', closeModal);
-      document.removeEventListener('keydown', closeModal);
+  if (
+    event.target === refs.lightboxOverlay ||
+    event.target.dataset.action === "close-lightbox" ||
+    event.code === "Escape"
+  ) {
+    refs.img.src = "";
+    refs.modal.classList.remove("is-open");
+    refs.modal.removeEventListener("click", closeModal);
+    document.removeEventListener("keydown", closeModal);
   }
-};
+}
 
-refs.gallery.addEventListener('click', openModal);
+refs.gallery.addEventListener("click", openModal);
 
 // function moveToRight(event) {
 //   // refs.img.alt = event.target.alt;
@@ -65,7 +62,6 @@ refs.gallery.addEventListener('click', openModal);
 //     moveToRight(event);
 //   };
 // }
-
 
 // function backDropClick(event) {
 //   if (event.target === event.currentTarget) {
