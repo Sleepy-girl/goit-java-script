@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  /* scroll-behavior: smooth; */
 }
 
 *,
@@ -25,21 +26,6 @@ body {
   background-image: url("./images/bg-pattern.png");
 }
 
-/* button */
-.loadMore {
-  display: block;
-  margin: 0 auto;
-  height: 30px;
-  width: 100px;
-}
-
-.loadMore,
-.search-btn {
-  background-color: #fff;
-  border-radius: 4px;
-  border: 1px solid rgb(0, 89, 255);
-  color: rgb(100, 148, 237);
-}
 /* gallery */
 .gallery {
   display: flex;
@@ -51,7 +37,12 @@ body {
   margin-right: 20px;
   margin-bottom: 30px;
   width: 200px;
+  height: 250px;
 }
+/* .image {
+  width: 200px;
+  
+} */
 .stats {
   display: flex;
   flex-wrap: wrap;
@@ -60,4 +51,25 @@ body {
 }
 .stats-item {
   margin-right: 20px;
+}
+
+/* button */
+.loadMore {
+  display: block;
+  margin: 0 auto;
+  height: 30px;
+  width: 100px;
+  margin-bottom: 50px;
+}
+
+.loadMore,
+.search-btn {
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid rgb(0, 89, 255);
+  color: rgb(100, 148, 237);
+}
+
+.loadMore.is-hidden {
+  display: none;
 }

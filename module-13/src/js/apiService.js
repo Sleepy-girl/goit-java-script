@@ -3,18 +3,43 @@
 
 const apiKey = "17611748-6d67051009b1653d75232e8c8";
 
-function fetchImages(searchQuery) {
-  const url = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${searchQuery}&page=${pageNumber}&per_page=12&key=${apiKey}`;
+export default {
+  searchQuery: "",
+  page: 1,
 
-  return fetch(url)
-    .then((response) => response.json())
-    .then(({ hits }) => {
-      // console.log(hits);
-      const markup = updateImagesMarkup(hits);
-      // console.log(markup);
-      refs.imagerContainer.insertAdjacentHTML("beforeend", markup);
-    })
-    .catch((error) => console.log(error));
-}
+  fetchImages() {
+    const url = `https://pixabay.com/api/?image_type=photo&orientation=horizontal&q=${this.searchQuery}&page=${this.page}&per_page=12&key=${apiKey}`;
 
-export default fetchImages;
+    // const options = {
+    //   headers: {
+    //     Authorization: apiKey,
+    //   },
+    // };
+
+    return fetch(url)
+      .then((response) => response.json())
+      .then(({ hits }) => {
+        this.incrementPage();
+        return hits;
+      });
+    // .catch((error) => console.log(error))
+  },
+
+  resetPage() {
+    this.page = 1;
+  },
+
+  incrementPage() {
+    this.page += 1;
+  },
+
+  get query() {
+    return this.searchQuery;
+  },
+
+  set query(value) {
+    this.searchQuery = value;
+  },
+};
+
+// export default apiService.fetchImages;

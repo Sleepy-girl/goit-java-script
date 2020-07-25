@@ -1,18 +1,35 @@
 import "./styles.css";
-import updateImagesMarkup from "./templates/card_image_template.hbs";
 import refs from "./js/refs";
-import fetchImages from "./js/apiService";
+import apiService from "./js/apiService";
+import updateImagesMarkup from "./js/imageMarkup";
 
-fetchImages();
+refs.searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  // console.log(e.currentTarget.elements.query);
 
-//* ================= button =====================
-// let searchQuery = "";
-// // function loadMoreImages (e) {
-// //   if (e.target.dataset.action === "load-btn") {
-// //     //отрисовывается еще 12 фоток
-// //   }
-// // }
+  const form = event.currentTarget;
+  apiService.query = form.elements.query.value;
+  // console.log(searchQuery);
 
-// refs.loadMore.querySelector("click", () => {
-//   fetchImages(searchQuery).then(updateImagesMarkup);
-// });
+  refs.imagerContainer.innerHTML = "";
+  form.reset(); //* сброс формы
+
+  apiService.resetPage(); //* сброс формы на первую страницу при новом запросе в поиск, реализуется в методе объекта файла apiService.
+
+  refs.loadMore.classList.add("is-hidden");
+
+  apiService.fetchImages().then((hits) => {
+    updateImagesMarkup(hits);
+    refs.loadMore.classList.remove("is-hidden");
+  });
+});
+
+refs.loadMore.addEventListener("click", () => {
+  apiService.fetchImages().then((hits) => {
+    updateImagesMarkup(hits);
+    window.scrollTo({
+      top: document.documentElement.offsetHeight,
+      behavior: "smooth",
+    });
+  });
+});
